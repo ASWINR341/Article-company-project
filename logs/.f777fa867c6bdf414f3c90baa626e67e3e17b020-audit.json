@@ -1,0 +1,54 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "/home/user/OFF PROJECT/logs/.f777fa867c6bdf414f3c90baa626e67e3e17b020-audit.json",
+    "files": [
+        {
+            "date": 1637044577336,
+            "name": "/home/user/OFF PROJECT/logs/app-2021-11-16.log",
+            "hash": "d3007dc36da939d8592d495b3d6b774c"
+        },
+        {
+            "date": 1637125857659,
+            "name": "/home/user/OFF PROJECT/logs/app-2021-11-17.log",
+            "hash": "ef7080e64e5d1addfdb73a089a765ede"
+        },
+        {
+            "date": 1637213287485,
+            "name": "/home/user/OFF PROJECT/logs/app-2021-11-18.log",
+            "hash": "1cfb0590bb489db8bc4596e065e27a17"
+        },
+        {
+            "date": 1637298729014,
+            "name": "/home/user/OFF PROJECT/logs/app-2021-11-19.log",
+            "hash": "9fffea27ed24a21beee74eed8509064e"
+        },
+        {
+            "date": 1637562323176,
+            "name": "/home/user/OFF PROJECT/logs/app-2021-11-22.log",
+            "hash": "85558af105c4e6c53e5adfdbecdc9ec1"
+        },
+        {
+            "date": 1637644059913,
+            "name": "/home/user/OFF PROJECT/logs/app-2021-11-23.log",
+            "hash": "bf4ffe6bad90dd79da999a7c07853c12"
+        },
+        {
+            "date": 1637696083543,
+            "name": "/home/user/OFF PROJECT/logs/app-2021-11-24.log",
+            "hash": "a2f8c4ebf754f5aee57e111c1b260a0a"
+        },
+        {
+            "date": 1637814572839,
+            "name": "/home/user/OFF PROJECT/logs/app-2021-11-25.log",
+            "hash": "45f39a55f5a3457616d5412fafc15b4b"
+        },
+        {
+            "date": 1637866097399,
+            "name": "/home/user/OFF PROJECT/logs/app-2021-11-26.log",
+            "hash": "ced234669131f33929a3ca91e967cd1b"
+        }
+    ]
+}

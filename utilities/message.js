@@ -1,0 +1,31 @@
+'use strict';
+
+module.exports = {
+  serverError: 'Internal Server Error',
+  validationErrors: 'Validation Errors',
+  userAdded: 'New user added',
+  adminUpdated: 'Admin hasbeen updated',
+  login: 'Successfully logged in',
+  logout: 'Successfully logged out',
+  adminAdded: 'Admin has been added ',
+  loginFailed: 'Invalid email or password',
+  badResponseToken: 'Invalid token',
+  success: 'Success',
+  notFoundError: 'not found',
+  adminFetched: 'admin details',
+  userFetched: 'users fetched',
+  articleCreated: 'article created',
+  articleFetched: 'articles fetched',
+  articleUpdated: 'article updated',
+  articleDeleted: 'article deleted',
+  commentCreated: 'comment created',
+  commentFetched: 'comment fetched',
+  commentDeleted: 'comment deleted',
+  commentUpdated: 'comment updated',
+  favoriteCreated: 'added to favorites',
+  favoriteDeleted: 'removed from favorites',
+  favoriteFetched: 'favorites fetched',
+  follow: 'followed',
+  unfollow: 'unfollowed',
+  followersFetched: 'followers fetched'
+};
