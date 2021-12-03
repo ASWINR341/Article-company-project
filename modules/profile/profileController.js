@@ -21,7 +21,6 @@ exports.getFollowers = async (req, res, next) => {
   try {
     const id = req.user.id;
     const data = await profileService.getFollowers(id);
-    console.log(data);
     responseUtil.successResponse(res, messageUtil.followersFetched, {
       data
     });
@@ -57,9 +56,10 @@ exports.update = async (req, res) => {
 exports.follow = async (req, res) => {
   try {
     const followerId = req.user.id;
-    console.log(followerId);
     const followingId = req.params.followId;
-    if (followerId == followingId) {
+    const intfollowerId = parseInt(followerId);
+    const intfollowingId = parseInt(followingId);
+    if (intfollowerId === intfollowingId) {
       responseUtil.badRequestErrorResponse(res, messageUtil.cannotFollowYourself);
     } else {
       const followTrue = await profileService.ifFollow(followerId, followingId);
