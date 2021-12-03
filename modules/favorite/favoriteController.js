@@ -6,12 +6,12 @@ const favoriteService = require('./favoriteService');
 
 exports.createFavorite = async (req, res) => {
   try {
-    const user = req.user;
-    const article = req.body.articleId;
+    const userId = req.user.id;
+    const articleId = req.body.articleId;
 
     await favoriteService.createFavorite({
-      user: user,
-      article: article
+      userId: userId,
+      articleId: articleId
     });
     responseUtil.successResponse(res, messageUtil.favoriteCreated);
   } catch (ex) {
@@ -21,9 +21,10 @@ exports.createFavorite = async (req, res) => {
 
 exports.deleteFavorite = async (req, res) => {
   try {
-    const _id = req.params.favoriteId;
+    const id = req.params.favoriteId;
+    console.log(id);
 
-    await favoriteService.deleteFavorite({ _id });
+    await favoriteService.deleteFavorite(id);
 
     responseUtil.successResponse(res, messageUtil.favoriteDeleted);
   } catch (ex) {

@@ -20,8 +20,9 @@ exports.getUsers = async (req, res, next) => {
 
 exports.getFollowers = async (req, res, next) => {
   try {
-    const _id = req.user._id;
-    const data = await profileService.getFollowers(_id);
+    const id = req.user.id;
+    const data = await profileService.getFollowers(id);
+    console.log(data);
     responseUtil.successResponse(res, messageUtil.followersFetched, {
       data
     });
@@ -32,7 +33,8 @@ exports.getFollowers = async (req, res, next) => {
 
 exports.update = async (req, res) => {
   try {
-    const _id = req.user;
+    const id = req.user.id;
+    console.log(id);
     const name = req.body.name;
     const bio = req.body.bio;
     const image = req.files.image;
@@ -42,7 +44,7 @@ exports.update = async (req, res) => {
     await image.mv(appRoot + uploadPath);
 
     await profileService.update({
-      _id: _id,
+      id: id,
       name: name,
       bio: bio,
       image: uploadPath
@@ -55,17 +57,19 @@ exports.update = async (req, res) => {
 
 exports.follow = async (req, res) => {
   try {
-    const _id = req.user._id;
-    const followId = req.params.followId;
-    await profileService.followers({
-      _id: _id,
-      followId: followId
-    });
-    await profileService.following({
-      _id: _id,
-      followId: followId
-    });
-    responseUtil.successResponse(res, messageUtil.follow);
+    const followerId = req.user.id;
+    console.log(followerId);
+    const followingId = req.params.followId;
+    const followTrue = await profileService.ifFollow(followerId, followingId);
+    if (followTrue == null) {
+      await profileService.follow({
+        followerId,
+        followingId
+      });
+      responseUtil.successResponse(res, messageUtil.follow);
+    } else {
+      responseUtil.badRequestErrorResponse(res, messageUtil.userError);
+    }
   } catch (ex) {
     responseUtil.serverErrorResponse(res, ex);
   }
@@ -73,15 +77,11 @@ exports.follow = async (req, res) => {
 
 exports.unfollow = async (req, res) => {
   try {
-    const _id = req.user._id;
-    const followId = req.params.followId;
-    await profileService.unfollowers({
-      _id: _id,
-      followId: followId
-    });
-    await profileService.unfollowing({
-      _id: _id,
-      followId: followId
+    const followerId = req.user.id;
+    const followingId = req.params.followId;
+    await profileService.unfollow({
+      followerId,
+      followingId
     });
     responseUtil.successResponse(res, messageUtil.unfollow);
   } catch (ex) {

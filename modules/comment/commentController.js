@@ -7,14 +7,14 @@ const commentService = require('./commentService');
 
 exports.createComment = async (req, res, next) => {
   try {
-    const user = req.user;
+    const userId = req.user.id;
     const message = req.body.message;
-    const article = req.params.articleId;
+    const articleId = req.params.articleId;
 
     await commentService.createComment({
-      user: user,
+      userId: userId,
       message: message,
-      article: article
+      articleId: articleId
     });
     responseUtil.successResponse(res, messageUtil.commentCreated);
   } catch (ex) {
@@ -36,11 +36,11 @@ exports.showComment = async (req, res, next) => {
 
 exports.updateComment = async (req, res) => {
   try {
-    const _id = req.params.commentId;
+    const id = req.params.commentId;
     const message = req.body.message;
 
     await commentService.updateComment({
-      _id: _id,
+      id: id,
       message: message
     });
     responseUtil.successResponse(res, messageUtil.commentUpdated);
@@ -50,9 +50,9 @@ exports.updateComment = async (req, res) => {
 };
 exports.deleteComment = async (req, res) => {
   try {
-    const _id = req.params.commentId;
+    const id = req.params.commentId;
 
-    await commentService.deleteComment({ _id });
+    await commentService.deleteComment(id);
 
     responseUtil.successResponse(res, messageUtil.commentDeleted);
   } catch (ex) {

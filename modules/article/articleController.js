@@ -7,13 +7,14 @@ const articleService = require('./articleService');
 
 exports.createArticle = async (req, res, next) => {
   try {
-    const user = req.user;
+    const userId = req.user.id;
+    console.log(req.user);
     const title = req.body.title;
     const description = req.body.description;
     const bodypara = req.body.bodypara;
 
     await articleService.createArticle({
-      user: user,
+      userId: userId,
       title: title,
       description: description,
       bodypara: bodypara
@@ -23,17 +24,6 @@ exports.createArticle = async (req, res, next) => {
     responseUtil.serverErrorResponse(res, ex);
   }
 };
-// exports.showArticle = async (req, res, next) => {
-//   try {
-//     const mongoData = await articleService.showArticle();
-
-//     responseUtil.successResponse(res, messageUtil.articleFetched, {
-//       mongoData
-//     });
-//   } catch (ex) {
-//     responseUtil.serverErrorResponse(res, ex);
-//   }
-// };
 
 exports.searchArticle = async (req, res, next) => {
   try {
@@ -46,11 +36,10 @@ exports.searchArticle = async (req, res, next) => {
     }
     const limit = parseInt(size);
     const skip = (parseInt(page) - 1) * limit;
-    const searchField = req.query.title;
+    const searchField = req.query.search || '';
     const data = await articleService.searchArticle(searchField, skip, limit);
-    const count = await articleService.countArticle(searchField);
     responseUtil.successResponse(res, messageUtil.articleFetched, {
-      data, count
+      data
     });
   } catch (ex) {
     responseUtil.serverErrorResponse(res, ex);
@@ -59,13 +48,13 @@ exports.searchArticle = async (req, res, next) => {
 
 exports.updateArticle = async (req, res) => {
   try {
-    const _id = req.params.favoriteArticleId;
+    const id = req.params.articleId;
     const title = req.body.title;
     const description = req.body.description;
     const bodypara = req.body.bodypara;
 
     await articleService.updateArticle({
-      _id: _id,
+      id: id,
       title: title,
       description: description,
       bodypara: bodypara
@@ -77,9 +66,9 @@ exports.updateArticle = async (req, res) => {
 };
 exports.deleteArticle = async (req, res) => {
   try {
-    const _id = req.params.articleId;
+    const id = req.params.articleId;
 
-    await articleService.deleteArticle({ _id });
+    await articleService.deleteArticle(id);
 
     responseUtil.successResponse(res, messageUtil.articleDeleted);
   } catch (ex) {

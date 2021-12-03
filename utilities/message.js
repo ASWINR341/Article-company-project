@@ -27,5 +27,6 @@ module.exports = {
   favoriteFetched: 'favorites fetched',
   follow: 'followed',
   unfollow: 'unfollowed',
-  followersFetched: 'followers fetched'
+  followersFetched: 'followers fetched',
+  userError: 'user error'
 };

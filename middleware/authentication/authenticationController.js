@@ -17,7 +17,7 @@ exports.userTokenCheck = async (req, res, next) => {
     if (!userDecoded) {
       return responseUtil.badRequestErrorResponse(res, messageUtil.badResponseToken);
     }
-    const user = await authenticationService.findUserById(userDecoded._id);
+    const user = await authenticationService.findUserById(userDecoded.id);
     if (!user) {
       return responseUtil.badRequestErrorResponse(res, messageUtil.userbadResponseToken);
     };

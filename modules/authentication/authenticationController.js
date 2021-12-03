@@ -1,7 +1,5 @@
 'use strict';
 
-const { validationResult } = require('express-validator');
-
 const messageUtil = require('../../utilities/message');
 const passwordUtil = require('../../utilities/password');
 const responseUtil = require('../../utilities/response');
@@ -11,23 +9,21 @@ const authenticationService = require('./authenticationService');
 
 exports.login = async (req, res, next) => {
   try {
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-      return responseUtil.validationErrorResponse(res, errors.array());
-    }
-
     const { email, password } = req.body;
+    console.log(new Date());
 
     const user = await authenticationService.findUserByEmail(email);
     if (!user) {
       return responseUtil.badRequestErrorResponse(res, messageUtil.loginFailed);
     }
+    console.log(new Date());
 
     const isPassword = await passwordUtil.comparePasswords(password, user.password);
     if (!isPassword) {
       return responseUtil.badRequestErrorResponse(res, messageUtil.loginFailed);
     }
-    const token = await redisUtil.loginSession({ _id: user._id }, true);
+    console.log(new Date());
+    const token = await redisUtil.loginSession({ id: user.id }, true);
     responseUtil.successResponse(res, messageUtil.login, {
       token: token
 

@@ -13,7 +13,7 @@ const passport = require('passport');
 const fileUpload = require('express-fileupload');
 
 const passportConfig = require('./config/passportConfig');
-require('./models');
+const models = require('./models');
 const routes = require('./routes');
 const loggerUtil = require('./utilities/logger');
 const responseUtil = require('./utilities/response');
@@ -51,17 +51,23 @@ app.use((req, res, next) => {
   responseUtil.notFoundErrorResponse(res, req);
 });
 
-const port = process.env.PORT || 3000;
-server.listen(port, (error) => {
-  if (error) {
-    loggerUtil.error({
-      message: `Server error - ${error.toString()}`,
-      level: 'error'
-    });
-  } else {
-    loggerUtil.log({
-      message: `Server listening at port ${port}`,
-      level: 'info'
-    });
-  }
+models.sequelize.sync().then(function () {
+  loggerUtil.log({
+    message: 'Mysql DB connected',
+    level: 'info'
+  });
+  const port = process.env.PORT || 3000;
+  server.listen(port, (error) => {
+    if (error) {
+      loggerUtil.error({
+        message: `Server error - ${error.toString()}`,
+        level: 'error'
+      });
+    } else {
+      loggerUtil.log({
+        message: `Server listening at port ${port}`,
+        level: 'info'
+      });
+    }
+  });
 });
