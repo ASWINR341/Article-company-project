@@ -2,24 +2,26 @@
 
 const messageUtil = require('../../utilities/message');
 const responseUtil = require('../../utilities/response');
-// const redisUtil = require('../../utilities/redis');
 const articleService = require('./articleService');
 
 exports.createArticle = async (req, res, next) => {
   try {
     const userId = req.user.id;
-    console.log(req.user);
     const title = req.body.title;
     const description = req.body.description;
     const bodypara = req.body.bodypara;
-
-    await articleService.createArticle({
-      userId: userId,
-      title: title,
-      description: description,
-      bodypara: bodypara
-    });
-    responseUtil.successResponse(res, messageUtil.articleCreated);
+    const uniqueArticle = await articleService.ifArticleExist(title);
+    if (uniqueArticle == null) {
+      await articleService.createArticle({
+        userId: userId,
+        title: title,
+        description: description,
+        bodypara: bodypara
+      });
+      responseUtil.successResponse(res, messageUtil.articleCreated);
+    } else {
+      responseUtil.badRequestErrorResponse(res, messageUtil.articleAlreadyExist);
+    }
   } catch (ex) {
     responseUtil.serverErrorResponse(res, ex);
   }

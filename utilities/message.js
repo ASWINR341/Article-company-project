@@ -28,5 +28,8 @@ module.exports = {
   follow: 'followed',
   unfollow: 'unfollowed',
   followersFetched: 'followers fetched',
-  userError: 'user error'
+  userError: 'user error',
+  cannotFollowYourself: 'cannot follow yourself',
+  userAlreadyExist: 'user already exist',
+  articleAlreadyExist: 'article with this title  already exist'
 };

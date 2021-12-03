@@ -51,20 +51,22 @@ exports.signup = async (req, res, next) => {
     const name = req.body.name;
     const email = req.body.email;
     const password = req.body.password;
-    // const bio = req.body.bio;
-    // const image = req.files.image;
-    // const uploadPath = '/uploads/' + image.name;
-    const passwordHash = await passwordUtil.generateHash(password);
+    const signupUnique = await authenticationService.ifEmailExist(email);
+    if (signupUnique == null) {
+      const passwordHash = await passwordUtil.generateHash(password);
 
-    await authenticationService.signup({
-      name: name,
-      email: email,
-      password: passwordHash
-    });
+      await authenticationService.signup({
+        name: name,
+        email: email,
+        password: passwordHash
+      });
 
-    await mailUtil.sendMail(email, password);
+      await mailUtil.sendMail(email, password);
 
-    responseUtil.successResponse(res, messageUtil.userAdded);
+      responseUtil.successResponse(res, messageUtil.userAdded);
+    } else {
+      responseUtil.badRequestErrorResponse(res, messageUtil.userAlreadyExist);
+    }
   } catch (ex) {
     responseUtil.serverErrorResponse(res, ex);
   }

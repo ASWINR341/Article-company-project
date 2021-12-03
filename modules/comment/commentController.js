@@ -2,7 +2,6 @@
 
 const messageUtil = require('../../utilities/message');
 const responseUtil = require('../../utilities/response');
-// const redisUtil = require('../../utilities/redis');
 const commentService = require('./commentService');
 
 exports.createComment = async (req, res, next) => {

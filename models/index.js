@@ -1,30 +1,9 @@
-// 'use strict';
-
-// const mongoose = require('mongoose');
-// const loggerUtil = require('../utilities/logger');
-
-// mongoose.connect(process.env.DB_URI, {
-//   useNewUrlParser: true,
-//   useUnifiedTopology: true
-// });
-
-// const db = mongoose.connection;
-// db.on('error', (err) => loggerUtil.error({
-//   message: `MongoDB connection error - ${err.toString()}`,
-//   level: 'error'
-// }));
-// db.once('open', () => loggerUtil.log({
-//   message: 'MongoDB connected',
-//   level: 'info'
-// }));
-
 'use strict';
 
 const fs = require('fs');
 const path = require('path');
 const basename = path.basename(__filename);
 const Sequelize = require('sequelize');
-
 const database = process.env.DB_NAME;
 const username = process.env.DB_USERNAME;
 const password = process.env.DB_PASSWORD;

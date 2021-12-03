@@ -4,7 +4,6 @@ const messageUtil = require('../../utilities/message');
 const responseUtil = require('../../utilities/response');
 const profileService = require('./profileService');
 const appRoot = require('app-root-path');
-// const {user} = require('../../middleware/authentication/authenticationController')
 
 exports.getUsers = async (req, res, next) => {
   try {
@@ -60,15 +59,19 @@ exports.follow = async (req, res) => {
     const followerId = req.user.id;
     console.log(followerId);
     const followingId = req.params.followId;
-    const followTrue = await profileService.ifFollow(followerId, followingId);
-    if (followTrue == null) {
-      await profileService.follow({
-        followerId,
-        followingId
-      });
-      responseUtil.successResponse(res, messageUtil.follow);
+    if (followerId == followingId) {
+      responseUtil.badRequestErrorResponse(res, messageUtil.cannotFollowYourself);
     } else {
-      responseUtil.badRequestErrorResponse(res, messageUtil.userError);
+      const followTrue = await profileService.ifFollow(followerId, followingId);
+      if (followTrue == null) {
+        await profileService.follow({
+          followerId,
+          followingId
+        });
+        responseUtil.successResponse(res, messageUtil.follow);
+      } else {
+        responseUtil.badRequestErrorResponse(res, messageUtil.userError);
+      }
     }
   } catch (ex) {
     responseUtil.serverErrorResponse(res, ex);
