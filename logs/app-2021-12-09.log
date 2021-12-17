@@ -1,0 +1,124 @@
+{"level":"info","message":"Mysql DB connected"}
+{"level":"info","message":"Server listening at port 3000"}
+{"level":"info","message":"Mysql DB connected"}
+{"level":"info","message":"Server listening at port 3000"}
+{"level":"info","message":"Mysql DB connected"}
+{"level":"info","message":"Server listening at port 3000"}
+{"level":"info","message":"Mysql DB connected"}
+{"level":"info","message":"Server listening at port 3000"}
+{"level":"info","message":"Mysql DB connected"}
+{"level":"info","message":"Server listening at port 3000"}
+{"level":"info","message":"Mysql DB connected"}
+{"level":"info","message":"Server listening at port 3000"}
+{"level":"info","message":"Mysql DB connected"}
+{"level":"info","message":"Server listening at port 3000"}
+{"level":"info","message":"Mysql DB connected"}
+{"level":"info","message":"Server listening at port 3000"}
+{"level":"info","message":"Mysql DB connected"}
+{"level":"info","message":"Server listening at port 3000"}
+{"level":"info","message":"Mysql DB connected"}
+{"level":"info","message":"Server listening at port 3000"}
+{"level":"info","message":"Mysql DB connected"}
+{"level":"info","message":"Server listening at port 3000"}
+{"level":"info","message":"Mysql DB connected"}
+{"level":"info","message":"Server listening at port 3000"}
+{"level":"info","message":"Mysql DB connected"}
+{"level":"info","message":"Server listening at port 3000"}
+{"level":"info","message":"Mysql DB connected"}
+{"level":"info","message":"Server listening at port 3000"}
+{"level":"info","message":"Mysql DB connected"}
+{"level":"info","message":"Server listening at port 3000"}
+{"level":"info","message":"Mysql DB connected"}
+{"level":"info","message":"Server listening at port 3000"}
+{"level":"info","message":"Mysql DB connected"}
+{"level":"info","message":"Server listening at port 3000"}
+{"level":"info","message":"Mysql DB connected"}
+{"level":"info","message":"Server listening at port 3000"}
+{"level":"info","message":"Mysql DB connected"}
+{"level":"info","message":"Server listening at port 3000"}
+{"level":"info","message":"Mysql DB connected"}
+{"level":"info","message":"Server listening at port 3000"}
+{"level":"info","message":"Mysql DB connected"}
+{"date":"Thu Dec 09 2021 10:16:59 GMT+0530 (India Standard Time)","error":{"address":"::","code":"EADDRINUSE","errno":-98,"port":3306,"syscall":"listen"},"exception":true,"level":"error","message":"uncaughtException: listen EADDRINUSE: address already in use :::3306\nError: listen EADDRINUSE: address already in use :::3306\n    at Server.setupListenHandle [as _listen2] (node:net:1334:16)\n    at listenInCluster (node:net:1382:12)\n    at Server.listen (node:net:1469:7)\n    at /home/user/OFF PROJECT/app.js:60:10\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)","os":{"loadavg":[0.44,0.86,0.79],"uptime":2164.72},"process":{"argv":["/usr/local/bin/node","/home/user/OFF PROJECT/node_modules/pm2/lib/ProcessContainerFork.js"],"cwd":"/home/user/OFF PROJECT","execPath":"/usr/local/bin/node","gid":1000,"memoryUsage":{"arrayBuffers":238679,"external":1626803,"heapTotal":74010624,"heapUsed":45705264,"rss":122523648},"pid":17442,"uid":1000,"version":"v16.13.1"},"stack":"Error: listen EADDRINUSE: address already in use :::3306\n    at Server.setupListenHandle [as _listen2] (node:net:1334:16)\n    at listenInCluster (node:net:1382:12)\n    at Server.listen (node:net:1469:7)\n    at /home/user/OFF PROJECT/app.js:60:10\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)","trace":[{"column":16,"file":"node:net","function":"Server.setupListenHandle [as _listen2]","line":1334,"method":"setupListenHandle [as _listen2]","native":false},{"column":12,"file":"node:net","function":"listenInCluster","line":1382,"method":null,"native":false},{"column":7,"file":"node:net","function":"Server.listen","line":1469,"method":"listen","native":false},{"column":10,"file":"/home/user/OFF PROJECT/app.js","function":null,"line":60,"method":null,"native":false},{"column":5,"file":"node:internal/process/task_queues","function":"processTicksAndRejections","line":96,"method":null,"native":false}]}
+{"level":"info","message":"Mysql DB connected"}
+{"date":"Thu Dec 09 2021 10:17:12 GMT+0530 (India Standard Time)","error":{"address":"::","code":"EADDRINUSE","errno":-98,"port":3306,"syscall":"listen"},"exception":true,"level":"error","message":"uncaughtException: listen EADDRINUSE: address already in use :::3306\nError: listen EADDRINUSE: address already in use :::3306\n    at Server.setupListenHandle [as _listen2] (node:net:1334:16)\n    at listenInCluster (node:net:1382:12)\n    at Server.listen (node:net:1469:7)\n    at /home/user/OFF PROJECT/app.js:60:10\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)","os":{"loadavg":[0.88,0.95,0.82],"uptime":2178.37},"process":{"argv":["/usr/local/bin/node","/home/user/OFF PROJECT/node_modules/pm2/lib/ProcessContainerFork.js"],"cwd":"/home/user/OFF PROJECT","execPath":"/usr/local/bin/node","gid":1000,"memoryUsage":{"arrayBuffers":230487,"external":1618611,"heapTotal":74010624,"heapUsed":45829256,"rss":123121664},"pid":17509,"uid":1000,"version":"v16.13.1"},"stack":"Error: listen EADDRINUSE: address already in use :::3306\n    at Server.setupListenHandle [as _listen2] (node:net:1334:16)\n    at listenInCluster (node:net:1382:12)\n    at Server.listen (node:net:1469:7)\n    at /home/user/OFF PROJECT/app.js:60:10\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)","trace":[{"column":16,"file":"node:net","function":"Server.setupListenHandle [as _listen2]","line":1334,"method":"setupListenHandle [as _listen2]","native":false},{"column":12,"file":"node:net","function":"listenInCluster","line":1382,"method":null,"native":false},{"column":7,"file":"node:net","function":"Server.listen","line":1469,"method":"listen","native":false},{"column":10,"file":"/home/user/OFF PROJECT/app.js","function":null,"line":60,"method":null,"native":false},{"column":5,"file":"node:internal/process/task_queues","function":"processTicksAndRejections","line":96,"method":null,"native":false}]}
+{"level":"info","message":"Mysql DB connected"}
+{"level":"info","message":"Server listening at port 3307"}
+{"level":"info","message":"Mysql DB connected"}
+{"date":"Thu Dec 09 2021 10:20:49 GMT+0530 (India Standard Time)","error":{"address":"::","code":"EADDRINUSE","errno":-98,"port":3306,"syscall":"listen"},"exception":true,"level":"error","message":"uncaughtException: listen EADDRINUSE: address already in use :::3306\nError: listen EADDRINUSE: address already in use :::3306\n    at Server.setupListenHandle [as _listen2] (node:net:1334:16)\n    at listenInCluster (node:net:1382:12)\n    at Server.listen (node:net:1469:7)\n    at /home/user/OFF PROJECT/app.js:60:10\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)","os":{"loadavg":[0.39,0.65,0.72],"uptime":2395.69},"process":{"argv":["/usr/local/bin/node","/home/user/OFF PROJECT/node_modules/pm2/lib/ProcessContainerFork.js"],"cwd":"/home/user/OFF PROJECT","execPath":"/usr/local/bin/node","gid":1000,"memoryUsage":{"arrayBuffers":238679,"external":1626803,"heapTotal":73748480,"heapUsed":45897840,"rss":122642432},"pid":17779,"uid":1000,"version":"v16.13.1"},"stack":"Error: listen EADDRINUSE: address already in use :::3306\n    at Server.setupListenHandle [as _listen2] (node:net:1334:16)\n    at listenInCluster (node:net:1382:12)\n    at Server.listen (node:net:1469:7)\n    at /home/user/OFF PROJECT/app.js:60:10\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)","trace":[{"column":16,"file":"node:net","function":"Server.setupListenHandle [as _listen2]","line":1334,"method":"setupListenHandle [as _listen2]","native":false},{"column":12,"file":"node:net","function":"listenInCluster","line":1382,"method":null,"native":false},{"column":7,"file":"node:net","function":"Server.listen","line":1469,"method":"listen","native":false},{"column":10,"file":"/home/user/OFF PROJECT/app.js","function":null,"line":60,"method":null,"native":false},{"column":5,"file":"node:internal/process/task_queues","function":"processTicksAndRejections","line":96,"method":null,"native":false}]}
+{"level":"info","message":"Mysql DB connected"}
+{"level":"info","message":"Server listening at port 3000"}
+{"level":"info","message":"Mysql DB connected"}
+{"level":"info","message":"Server listening at port 3000"}
+{"level":"info","message":"Mysql DB connected"}
+{"level":"info","message":"Server listening at port 3000"}
+{"level":"info","message":"Mysql DB connected"}
+{"level":"info","message":"Server listening at port 3000"}
+{"level":"info","message":"Mysql DB connected"}
+{"level":"info","message":"Server listening at port 3000"}
+{"level":"info","message":"Mysql DB connected"}
+{"level":"info","message":"Server listening at port 3000"}
+{"level":"info","message":"Mysql DB connected"}
+{"level":"info","message":"Server listening at port 3000"}
+{"level":"info","message":"Mysql DB connected"}
+{"level":"info","message":"Server listening at port 3000"}
+{"level":"info","message":"Mysql DB connected"}
+{"level":"info","message":"Server listening at port 3000"}
+{"level":"info","message":"Mysql DB connected"}
+{"level":"info","message":"Server listening at port 3000"}
+{"level":"info","message":"Mysql DB connected"}
+{"level":"info","message":"Server listening at port 3000"}
+{"level":"info","message":"Mysql DB connected"}
+{"level":"info","message":"Server listening at port 3000"}
+{"level":"info","message":"Mysql DB connected"}
+{"level":"info","message":"Server listening at port 3000"}
+{"level":"info","message":"Mysql DB connected"}
+{"level":"info","message":"Server listening at port 3000"}
+{"level":"info","message":"Mysql DB connected"}
+{"level":"info","message":"Server listening at port 3000"}
+{"level":"info","message":"Mysql DB connected"}
+{"level":"info","message":"Server listening at port 3000"}
+{"level":"info","message":"Mysql DB connected"}
+{"level":"info","message":"Server listening at port 3000"}
+{"level":"info","message":"Mysql DB connected"}
+{"level":"info","message":"Server listening at port 3000"}
+{"level":"info","message":"Mysql DB connected"}
+{"level":"info","message":"Server listening at port 3000"}
+{"level":"info","message":"Mysql DB connected"}
+{"level":"info","message":"Server listening at port 3000"}
+{"level":"info","message":"Mysql DB connected"}
+{"level":"info","message":"Server listening at port 3000"}
+{"level":"info","message":"Mysql DB connected"}
+{"level":"info","message":"Server listening at port 3000"}
+{"level":"info","message":"Mysql DB connected"}
+{"level":"info","message":"Server listening at port 3000"}
+{"level":"info","message":"Mysql DB connected"}
+{"level":"info","message":"Server listening at port 3000"}
+{"level":"info","message":"Mysql DB connected"}
+{"level":"info","message":"Server listening at port 3000"}
+{"level":"info","message":"Mysql DB connected"}
+{"level":"info","message":"Server listening at port 3000"}
+{"level":"info","message":"Mysql DB connected"}
+{"level":"info","message":"Server listening at port 3000"}
+{"level":"info","message":"Mysql DB connected"}
+{"level":"info","message":"Server listening at port 3000"}
+{"level":"info","message":"Mysql DB connected"}
+{"level":"info","message":"Server listening at port 3000"}
+{"level":"info","message":"Mysql DB connected"}
+{"level":"info","message":"Server listening at port 3000"}
+{"level":"info","message":"Mysql DB connected"}
+{"level":"info","message":"Server listening at port 3000"}
+{"level":"info","message":"Mysql DB connected"}
+{"level":"info","message":"Server listening at port 3000"}
+{"level":"info","message":"Mysql DB connected"}
+{"level":"info","message":"Server listening at port 3000"}
+{"level":"info","message":"Mysql DB connected"}
+{"level":"info","message":"Server listening at port 3000"}
+{"level":"info","message":"Mysql DB connected"}
+{"level":"info","message":"Server listening at port 3000"}
+{"level":"info","message":"Mysql DB connected"}
+{"level":"info","message":"Server listening at port 3000"}
+{"level":"info","message":"Mysql DB connected"}
+{"level":"info","message":"Server listening at port 3000"}
+{"level":"info","message":"Mysql DB connected"}
+{"level":"info","message":"Server listening at port 3000"}
